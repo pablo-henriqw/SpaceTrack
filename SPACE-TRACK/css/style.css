@@ -1,0 +1,380 @@
+/* ===========================================================
+   SpaceTrack — folha de estilo única
+   Organização do arquivo:
+   1. Variáveis e reset
+   2. Tipografia
+   3. Cabeçalho e navegação
+   4. Blocos de conteúdo (seções, cartões, grades)
+   5. Formulários e botões
+   6. Componentes específicos (contagem, observação, luas)
+   7. Rodapé
+   8. Responsividade
+   =========================================================== */
+
+/* ---------- 1. Variáveis e reset ---------- */
+:root {
+  --ceu-profundo: #06070f;   /* fundo geral, quase o preto do céu */
+  --ceu-noite:    #0d1130;   /* superfícies elevadas */
+  --violeta:      #221a52;   /* bordas e realces frios */
+  --azul-estrela: #9fb4ff;   /* texto de apoio, links */
+  --ambar:        #f3c46a;   /* cor de destaque: luz de estrela */
+  --texto:        #e8eaf6;
+  --texto-suave:  #a3a8c6;
+  --largura:      1080px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--ceu-profundo);
+  /* Campo de estrelas feito só com gradientes: sem imagem, sem peso extra. */
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, #ffffff 50%, transparent 50%),
+    radial-gradient(1px 1px at 68% 8%,  #cfd8ff 50%, transparent 50%),
+    radial-gradient(2px 2px at 82% 34%, #ffffff 50%, transparent 50%),
+    radial-gradient(1px 1px at 33% 62%, #ffe9b8 50%, transparent 50%),
+    radial-gradient(1px 1px at 91% 71%, #ffffff 50%, transparent 50%),
+    radial-gradient(1px 1px at 22% 88%, #cfd8ff 50%, transparent 50%),
+    radial-gradient(ellipse 70% 50% at 50% 0%, #1b1550 0%, transparent 70%);
+  background-attachment: fixed;
+  color: var(--texto);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+/* ---------- 2. Tipografia ---------- */
+h1, h2, h3 {
+  /* Serifa antiga, como as cartas celestes impressas dos séculos passados. */
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 .5em;
+}
+
+h1 { font-size: 2.9rem; letter-spacing: -0.5px; }
+h2 { font-size: 1.9rem; }
+h3 { font-size: 1.2rem; }
+
+p { max-width: 68ch; }
+
+a { color: var(--azul-estrela); }
+
+/* ---------- 3. Cabeçalho e navegação ---------- */
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--violeta);
+}
+
+.marca {
+  font-family: "Iowan Old Style", Palatino, Georgia, serif;
+  font-size: 1.35rem;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.marca span { color: var(--ambar); }
+
+.menu {
+  display: flex;
+  gap: 26px;
+}
+
+.menu a {
+  color: var(--texto-suave);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover,
+.menu a.ativo {
+  color: var(--texto);
+  border-bottom-color: var(--ambar);
+}
+
+/* ---------- 4. Blocos de conteúdo ---------- */
+.conteudo {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0 24px 72px;
+}
+
+.secao { padding-top: 64px; }
+
+.secao > p { color: var(--texto-suave); }
+
+.hero {
+  padding: 84px 0 24px;
+}
+
+.hero p.chamada {
+  font-size: 1.15rem;
+  color: var(--texto-suave);
+}
+
+/* Grade genérica de cartões, usada em várias páginas. */
+.grade {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.cartao {
+  flex: 1 1 280px;
+  background: var(--ceu-noite);
+  border: 1px solid var(--violeta);
+  border-radius: 10px;
+  padding: 22px;
+}
+
+.cartao h3 { color: var(--ambar); }
+
+.cartao p {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: .96rem;
+}
+
+.data-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: .82rem;
+  color: var(--azul-estrela);
+  border: 1px solid var(--violeta);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+/* ---------- 5. Formulários e botões ---------- */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: .92rem;
+  color: var(--texto-suave);
+}
+
+input, textarea {
+  width: 100%;
+  background: #080a1c;
+  border: 1px solid var(--violeta);
+  border-radius: 8px;
+  color: var(--texto);
+  font: inherit;
+  padding: 11px 13px;
+}
+
+input:focus, textarea:focus, a:focus, button:focus {
+  outline: 2px solid var(--ambar);
+  outline-offset: 2px;
+}
+
+textarea { min-height: 96px; resize: vertical; }
+
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--ceu-noite);
+  border: 1px solid var(--violeta);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.campo { flex: 1 1 240px; }
+
+.campo-largo { flex: 1 1 100%; }
+
+.botao {
+  background: var(--ambar);
+  border: none;
+  border-radius: 8px;
+  color: #17110a;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  padding: 11px 22px;
+}
+
+.botao:hover { background: #ffd582; }
+
+.botao-apagar {
+  background: transparent;
+  border: 1px solid #6b2b3c;
+  border-radius: 8px;
+  color: #ff9aae;
+  cursor: pointer;
+  font: inherit;
+  font-size: .88rem;
+  padding: 6px 14px;
+}
+
+.botao-apagar:hover { background: #2a0f18; }
+
+/* Mensagem de retorno das operações do banco. */
+.aviso {
+  margin-top: 22px;
+  border-left: 3px solid var(--ambar);
+  background: var(--ceu-noite);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  color: var(--texto);
+}
+
+/* Estado vazio: convida a agir em vez de só informar. */
+.vazio {
+  border: 1px dashed var(--violeta);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+/* ---------- 6. Componentes específicos ---------- */
+
+/* Contagem regressiva */
+.contagem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 26px 0 10px;
+}
+
+.contagem div {
+  flex: 1 1 110px;
+  background: var(--ceu-noite);
+  border: 1px solid var(--violeta);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.contagem strong {
+  display: block;
+  font-family: "Iowan Old Style", Palatino, Georgia, serif;
+  font-size: 2.4rem;
+  color: var(--ambar);
+  line-height: 1;
+}
+
+.contagem small {
+  color: var(--texto-suave);
+  font-size: .82rem;
+}
+
+.alvo-contagem { color: var(--azul-estrela); }
+
+/* Ferramenta "O que posso observar hoje?" */
+.observador {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px;
+  background: var(--ceu-noite);
+  border: 1px solid var(--violeta);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.observador .campo { flex: 1 1 220px; }
+
+#resultado-observacao {
+  margin-top: 18px;
+  min-height: 60px;
+}
+
+#resultado-observacao h3 { margin-bottom: 4px; }
+
+/* Imagem astronômica do dia (API da NASA).
+   Sem "display" aqui de propósito: ele anularia o atributo hidden. */
+.nasa {
+  margin-top: 22px;
+  background: var(--ceu-noite);
+  border: 1px solid var(--violeta);
+  border-radius: 10px;
+  padding: 22px;
+}
+
+.nasa h3 { color: var(--ambar); }
+
+.nasa img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 14px 0;
+}
+
+.nasa p { color: var(--texto-suave); font-size: .96rem; }
+
+/* Fases da lua */
+.luas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 26px;
+  list-style: none;
+  padding: 0;
+}
+
+.luas li {
+  flex: 1 1 160px;
+  text-align: center;
+  background: var(--ceu-noite);
+  border: 1px solid var(--violeta);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.luas .disco {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.luas strong { display: block; margin: 8px 0 4px; }
+
+.luas small { color: var(--texto-suave); }
+
+/* Lista de passos do guia: aqui a numeração faz sentido, é uma sequência. */
+.passos {
+  margin-top: 26px;
+  padding-left: 22px;
+}
+
+.passos li { margin-bottom: 14px; }
+
+.passos strong { color: var(--ambar); }
+
+/* ---------- 7. Rodapé ---------- */
+.rodape {
+  border-top: 1px solid var(--violeta);
+  color: var(--texto-suave);
+  font-size: .88rem;
+  padding: 26px 24px 40px;
+  text-align: center;
+}
+
+/* ---------- 8. Responsividade ---------- */
+@media (max-width: 720px) {
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.5rem; }
+
+  .topo { justify-content: center; }
+  .menu { gap: 18px; flex-wrap: wrap; justify-content: center; }
+  .hero { padding-top: 48px; }
+  .contagem strong { font-size: 1.9rem; }
+  .botao { width: 100%; }
+}
+
+/* Respeita quem prefere menos movimento na tela. */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

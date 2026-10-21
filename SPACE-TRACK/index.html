@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceTrack — Rastreador Espacial</title>
+  <meta name="description" content="Acompanhe eventos astronômicos e descubra o que dá para observar no céu em cada noite.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Cabeçalho e navegação (igual nas três páginas) ===== -->
+  <header class="topo">
+    <a class="marca" href="index.html">Space<span>Track</span></a>
+    <nav class="menu">
+      <a href="index.html" class="ativo">Início</a>
+      <a href="pages/guia.html">Guia de observação</a>
+      <a href="pages/eventos.php">Agenda</a>
+    </nav>
+  </header>
+
+  <main class="conteudo">
+
+    <!-- ===== Hero: a contagem é o primeiro elemento a chamar atenção ===== -->
+    <section class="hero">
+      <h1>O próximo espetáculo do céu já começou a contar</h1>
+      <p class="chamada">
+        SpaceTrack acompanha chuvas de meteoros, eclipses e o que está visível
+        sobre o Brasil a cada noite. Sem telescópio caro, sem jargão.
+      </p>
+
+      <!-- Os números são preenchidos pelo script.js -->
+      <div class="contagem" id="contagem">
+        <div><strong id="c-dias">—</strong><small>dias</small></div>
+        <div><strong id="c-horas">—</strong><small>horas</small></div>
+        <div><strong id="c-minutos">—</strong><small>minutos</small></div>
+        <div><strong id="c-segundos">—</strong><small>segundos</small></div>
+      </div>
+
+      <p class="alvo-contagem" id="alvo-contagem">Calculando o próximo evento…</p>
+    </section>
+
+    <!-- ===== Ferramenta de observação por data ===== -->
+    <section class="secao">
+      <h2>O que posso observar hoje?</h2>
+      <p>Escolha uma data e veja o que o céu oferece naquela noite, visto do Hemisfério Sul.</p>
+
+      <div class="observador">
+        <div class="campo">
+          <label for="data-observacao">Data da observação</label>
+          <input type="date" id="data-observacao">
+        </div>
+      </div>
+
+      <!-- O JavaScript escreve a resposta aqui -->
+      <div id="resultado-observacao"></div>
+    </section>
+
+    <!-- ===== API da NASA (APOD): imagem astronômica do dia ===== -->
+    <section class="secao">
+      <h2>Imagem astronômica do dia</h2>
+      <p>Escolha uma data e veja a imagem que a NASA publicou naquele dia, direto da API oficial.</p>
+
+      <div class="observador">
+        <div class="campo">
+          <label for="data-nasa">Data</label>
+          <input type="date" id="data-nasa" min="1995-06-16">
+        </div>
+        <button type="button" class="botao" id="botao-nasa">Buscar imagem</button>
+      </div>
+
+      <!-- Mensagem de erro: o JavaScript mostra aqui se a busca falhar -->
+      <p class="aviso" id="mensagem-nasa" hidden></p>
+
+      <!-- Resultado: o JavaScript preenche e exibe este bloco -->
+      <article class="nasa" id="resultado-nasa" hidden>
+        <h3 id="titulo-nasa"></h3>
+        <span class="data-tag" id="data-exibida-nasa"></span>
+        <img id="imagem-nasa" alt="" hidden>
+        <a id="link-nasa" target="_blank" rel="noopener" hidden>Este conteúdo é um vídeo — abrir na fonte</a>
+        <p id="descricao-nasa"></p>
+      </article>
+    </section>
+
+    <!-- ===== Três dicas rápidas ===== -->
+    <section class="secao">
+      <h2>Antes de sair para o quintal</h2>
+      <div class="grade">
+        <article class="cartao">
+          <h3>Deixe os olhos se acostumarem</h3>
+          <p>A visão noturna leva cerca de 20 minutos para se adaptar. Uma olhada no celular reinicia a contagem.</p>
+        </article>
+        <article class="cartao">
+          <h3>Fuja da luz, não da cidade</h3>
+          <p>Nem sempre dá para viajar. Um muro que bloqueie o poste da rua já melhora muito o que você enxerga.</p>
+        </article>
+        <article class="cartao">
+          <h3>Olhe de lado</h3>
+          <p>Objetos fracos aparecem melhor pela visão periférica. Mire um pouco ao lado do alvo e ele surge.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    SpaceTrack — projeto de estudo em HTML, CSS, JavaScript e PHP.
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

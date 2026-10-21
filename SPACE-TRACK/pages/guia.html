@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de observação — SpaceTrack</title>
+  <meta name="description" content="Como começar a observar o céu noturno e como a fase da lua muda o que você consegue ver.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="marca" href="../index.html">Space<span>Track</span></a>
+    <nav class="menu">
+      <a href="../index.html">Início</a>
+      <a href="guia.html" class="ativo">Guia de observação</a>
+      <a href="eventos.php">Agenda</a>
+    </nav>
+  </header>
+
+  <main class="conteudo">
+
+    <section class="hero">
+      <h1>Guia de observação</h1>
+      <p class="chamada">
+        Cinco passos, nenhum equipamento obrigatório. O que muda mais o resultado
+        de uma noite não é a lente: é a escuridão e a paciência.
+      </p>
+    </section>
+
+    <!-- ===== Passos: aqui a numeração faz sentido, é uma sequência ===== -->
+    <section class="secao">
+      <h2>Como começar</h2>
+      <ol class="passos">
+        <li><strong>Escolha a noite pela lua.</strong> Lua cheia clareia o céu inteiro e apaga os objetos fracos. Para galáxias e meteoros, procure a semana da lua nova.</li>
+        <li><strong>Confira o tempo.</strong> Céu limpo vale mais que equipamento. Umidade alta e fumaça deixam as estrelas pastosas mesmo sem nuvem.</li>
+        <li><strong>Adapte a visão.</strong> Vinte minutos longe de qualquer luz branca. Se precisar de lanterna, cubra com papel vermelho.</li>
+        <li><strong>Comece pelo que é grande.</strong> Cruzeiro do Sul, Órion, Escorpião, as Plêiades. Reconhecer as formas te dá o mapa para achar o resto.</li>
+        <li><strong>Anote o que viu.</strong> Data, horário, local e condição do céu. Em poucos meses você passa a prever o que vai estar lá.</li>
+      </ol>
+    </section>
+
+    <!-- ===== Fase da lua de hoje, calculada pelo JavaScript ===== -->
+    <section class="secao">
+      <h2>A lua desta noite</h2>
+      <p>Calculada a partir do ciclo de 29,53 dias entre duas luas novas.</p>
+      <ul class="luas">
+        <li id="fase-lua">Calculando a fase…</li>
+      </ul>
+    </section>
+
+    <!-- ===== Referência fixa das quatro fases principais ===== -->
+    <section class="secao">
+      <h2>O que cada fase permite ver</h2>
+      <ul class="luas">
+        <li>
+          <span class="disco">●</span>
+          <strong>Lua nova</strong>
+          <small>Céu no ponto mais escuro do mês. Galáxias, nebulosas e chuvas de meteoros.</small>
+        </li>
+        <li>
+          <span class="disco">◑</span>
+          <strong>Quarto crescente</strong>
+          <small>As sombras na linha entre dia e noite lunar revelam as crateras em relevo.</small>
+        </li>
+        <li>
+          <span class="disco">○</span>
+          <strong>Lua cheia</strong>
+          <small>Muito brilho e pouco contraste. Boa para ver os mares escuros, ruim para o resto.</small>
+        </li>
+        <li>
+          <span class="disco">◐</span>
+          <strong>Quarto minguante</strong>
+          <small>Relevo lunar de novo em destaque, agora só para quem observa de madrugada.</small>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Equipamento ===== -->
+    <section class="secao">
+      <h2>Com o que observar</h2>
+      <div class="grade">
+        <article class="cartao">
+          <h3>A olho nu</h3>
+          <p>Constelações, planetas brilhantes, meteoros, a faixa da Via Láctea e as Nuvens de Magalhães em céu escuro.</p>
+        </article>
+        <article class="cartao">
+          <h3>Binóculo 10x50</h3>
+          <p>O melhor custo-benefício da astronomia. Mostra as luas de Júpiter, crateras da lua e dezenas de aglomerados.</p>
+        </article>
+        <article class="cartao">
+          <h3>Telescópio</h3>
+          <p>Faz sentido depois que você já conhece o céu. Anéis de Saturno, fases de Vênus e nebulosas com estrutura.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    SpaceTrack — projeto de estudo em HTML, CSS, JavaScript e PHP.
+  </footer>
+
+  <script src="../java/script.js"></script>
+</body>
+</html>
