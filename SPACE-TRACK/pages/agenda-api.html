@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda via API — SpaceTrack</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="marca" href="../index.html">Space<span>Track</span></a>
+    <nav class="menu">
+      <a href="../index.html">Início</a>
+      <a href="guia.html">Guia de observação</a>
+      <a href="eventos.php">Agenda</a>
+      <a href="agenda-api.html" class="ativo">Agenda API</a>
+    </nav>
+  </header>
+
+  <main class="conteudo">
+
+    <section class="hero">
+      <h1>Agenda via API</h1>
+      <p class="chamada">
+        Esta página conversa com a API Flask por fetch: lista os eventos do
+        banco e cadastra novos sem recarregar.
+      </p>
+    </section>
+
+    <section class="secao">
+      <h2>Adicionar evento</h2>
+
+      <form class="formulario" id="form-evento">
+        <div class="campo">
+          <label for="titulo">Título</label>
+          <input type="text" id="titulo" maxlength="120"
+                 placeholder="Ex.: Conjunção entre Vênus e a Lua" required>
+        </div>
+
+        <div class="campo">
+          <label for="data-evento">Data</label>
+          <input type="date" id="data-evento" required>
+        </div>
+
+        <div class="campo campo-largo">
+          <label for="descricao">O que observar</label>
+          <textarea id="descricao"
+                    placeholder="Horário, direção do céu, equipamento necessário…"></textarea>
+        </div>
+
+        <button type="submit" class="botao">Salvar evento</button>
+      </form>
+
+      <p class="aviso" id="mensagem-api" hidden></p>
+    </section>
+
+    <section class="secao">
+      <h2 id="titulo-lista">Eventos na agenda</h2>
+      <div class="grade" id="lista-eventos"></div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    SpaceTrack — projeto de estudo em HTML, CSS, JavaScript, PHP e Flask.
+  </footer>
+
+  <script src="../js/api.js"></script>
+</body>
+</html>
